@@ -1,11 +1,22 @@
+import Link from 'next/link'
 import React from 'react'
 
-const Product = () => {
+const Product = ({ productId = 100 }) => {
   return (
     <>
-      <h1>Product 1</h1>
-      <h1>Product 2</h1>
-      <h1>Product 3</h1>
+      <Link href="/">Home</Link>
+      <h1>
+        {' '}
+        <Link href={`/product/${productId}`}> Product 1</Link>
+      </h1>
+      <h1>
+        <Link href="/product/2"> Product 2</Link>
+      </h1>
+      <h1>
+        <Link href="/product/3" replace>
+          Product 3{/* <a>Product 3</a> */}
+        </Link>
+      </h1>
     </>
   )
 }
